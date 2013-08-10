@@ -1,12 +1,12 @@
 <?php 
-require("/gnv/twitteroauth/twitteroauth.php");
+require($_SERVER['DOCUMENT_ROOT']."/gnv/twitteroauth/twitteroauth.php");
 session_start();
 
 // The TwitterOAuth instance  
 $twitteroauth = new TwitterOAuth('x0v7IZW7E9jSTEzZFs5JNA', '8EXdPtxA3TBQpn4X9HsODo6Db1k7XvfFvwBR3MJZuE');
 
 // Requesting authentication tokens, the parameter is the URL we will be redirected to  
-$request_token = $twitteroauth->getRequestToken('http://parker-jones.org/twitter_oauth.php');  
+$request_token = $twitteroauth->getRequestToken('http://parker-jones.org/gnv/twitter_oauth.php');  
   
 // Saving them into the session  
 $_SESSION['oauth_token'] = $request_token['oauth_token'];  
