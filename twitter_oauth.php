@@ -13,8 +13,8 @@ if (!empty($_GET['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !empt
 	$_SESSION['access_token'] = $access_token; 
 	// Let's get the user's info 
 	$user_info = $twitteroauth->get('account/verify_credentials'); 
-	// Print user's info  
-	print_r($user_info);  
+	// // Print user's info  
+	// print_r($user_info);  
 
 	if(isset($user_info->error)){  
     // Something's wrong, go back to square 1  
