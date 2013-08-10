@@ -18,7 +18,7 @@ if (!empty($_GET['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !empt
 
 	if(isset($user_info->error)){  
     // Something's wrong, go back to square 1  
-    header('Location: connect.php'); 
+    header('Location:' . $_SERVER['DOCUMENT_ROOT'] .' /gnv/connect.php'); 
 	} else { 
     // Let's find the user by its ID  
     $query = mysql_query("SELECT * FROM users WHERE oauth_provider = 'twitter' AND oauth_uid = ". $user_info->id);  
@@ -41,10 +41,13 @@ if (!empty($_GET['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !empt
     $_SESSION['oauth_token'] = $result['oauth_token']; 
     $_SESSION['oauth_secret'] = $result['oauth_secret']; 
  
-    header('Location: connect.php');  
+    if(!empty($_SESSION['username'])){  
+    // User is logged in, redirect  
+    header('Location:' . $_SERVER['DOCUMENT_ROOT']);   
+} 
 }  
 
 }else{
-	header('Location: connect.php');
+    header('Location:' . $_SERVER['DOCUMENT_ROOT'] .' /gnv/connect.php'); 
 }
 ?>
