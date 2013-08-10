@@ -1,5 +1,5 @@
 <?php 
-require("twitteroauth/twitteroauth.php");
+require("/gnv/twitteroauth/twitteroauth.php");
 session_start();
 
 // The TwitterOAuth instance  
