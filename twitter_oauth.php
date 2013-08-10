@@ -48,6 +48,6 @@ if (!empty($_GET['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !empt
 	}  
 
 }else{
-    header('Location: error.php'); 
+    header('Location: error-p.php'); 
 }
 ?>
