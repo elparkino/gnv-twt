@@ -53,15 +53,15 @@ if (!empty($_GET['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !empt
 ?>
 <?php 
 
-		$home_timeline = $twitteroauth->get('search/tweets', array('q' => '%23thisisgainesville'));
+		$search_tweets = $twitteroauth->get('search/tweets', array('q' => '%23thisisgainesville'));
 		  echo "<ul>";
-		  foreach ($home_timeline as $key => $value) {
-		  		echo "<li>" . $key . "<li>";
-		  		echo "<ul>";
+		  foreach ($search_tweets as $key => $value) {
+		  		echo "<li>" . $key . "</li>";
+		  		echo "<li><ul>";
 		  		foreach ($value as $key => $value) {
 		  			echo "<li>" . $key . "</li>";
 		  		}
-		  		echo "</ul>";
+		  		echo "</ul></li>";
 		     }
 		  echo "</ul>";
 		} 
