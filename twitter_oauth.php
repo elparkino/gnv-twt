@@ -44,16 +44,36 @@ if (!empty($_GET['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !empt
  
     	if(!empty($_SESSION['username'])){  
     	// User is logged in, redirect  
+?>
+	<html>
+	<head>
+		<title>I'm tired of my eyes hurting.</title>
+	</head>
+	<body>
+?>
+<?php 
 
 		$home_timeline = $twitteroauth->get('statuses/home_timeline');
+		  echo "<ul>";
 		  foreach ($home_timeline as $key => $value) {
-		  		echo "Key: \n" . $key . "\n\n\n\n";
+		  		echo "<li>" . $key . "<li>";
+		  		echo "<ul>";
 		  		foreach ($value as $key => $value) {
-		  			echo "Key: " . $key . "\n\n\n";
+		  			echo "<li>" . $key . "</li>";
 		  		}
-		     }   
+		  		echo "</ul>";
+		     }
+		  echo "</ul>";
 		} 
+
+?>
+
+	</body>
+	</html>
+
 	}  
+
+<?php  
 
 }else{
    // header('Location: connect.php'); 
