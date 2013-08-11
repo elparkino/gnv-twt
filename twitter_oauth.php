@@ -19,6 +19,7 @@ if (!empty($_GET['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !empt
 	if(isset($user_info->error)){  
     	// Something's wrong, go back to square 1  
     	header('Location: index.php'); 
+    	echo "hey fuckwad, quit being a fuckwad";
 	} else { 
     	// Let's find the user by its ID  
     	$query = mysql_query("SELECT * FROM users WHERE oauth_provider = 'twitter' AND oauth_uid = ". $user_info->id);  
@@ -43,11 +44,13 @@ if (!empty($_GET['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !empt
  
     	if(!empty($_SESSION['username'])){  
     	// User is logged in, redirect  
-    	header('Location: index.php');   
+
+		$home_timeline = $twitteroauth->get('statuses/home_timeline');  
+		print_r($home_timeline);   
 		} 
 	}  
 
 }else{
-    header('Location: index.php'); 
+   // header('Location: connect.php'); 
 }
 ?>
