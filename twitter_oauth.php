@@ -54,12 +54,10 @@ if (!empty($_GET['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !empt
 <?php 
 
 		$search_tweets = $twitteroauth->get('search/tweets', array('q' => '%23thisisgainesville'));
-		  echo "<ul>";
-		  foreach ($search_tweets as $tweet) {
+		  // echo "<ul>";
+		  foreach ($search_tweets->statuses as $status) {
 
-		  		$text = $tweet->statuses;
-
-		  		print_r($text);
+		  		echo '<pre>' . print_r($status) . '</pre>';
 		  		// echo '<li>' . $text . '</li>';
 		  		// var_dump($status);
 		  		// echo "<li>" . $status . "</li>";
@@ -69,7 +67,7 @@ if (!empty($_GET['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !empt
 		  		// }
 		  		// echo "</ul></li>";
 		     }
-		  echo "</ul>";
+		  // echo "</ul>";
 		} 
 
 ?>
