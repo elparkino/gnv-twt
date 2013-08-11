@@ -47,7 +47,11 @@ if (!empty($_GET['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !empt
 
 		$home_timeline = $twitteroauth->get('statuses/home_timeline');
 		  foreach ($home_timeline as $key => $value) {
-		     	echo $key;
+		     	$innerArray = $key;
+
+		     	foreach ($innerArray as $key => $value) {
+		     		echo $key;
+		     	}
 		     }   
 		} 
 	}  
