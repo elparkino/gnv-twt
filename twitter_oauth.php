@@ -71,6 +71,11 @@ if (!empty($_GET['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !empt
 	</body>
 	</html>
 
-	}  
+  
 
-<?php  } ?>
+<?php  
+	}
+} 
+
+
+?>
