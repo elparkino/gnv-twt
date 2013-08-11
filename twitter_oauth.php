@@ -53,18 +53,20 @@ if (!empty($_GET['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !empt
 ?>
 <?php 
 
-		$home_timeline = $twitteroauth->get('statuses/home_timeline');
-		  echo "<ul>";
-		  foreach ($home_timeline as $key => $value) {
-		  		echo "<li>" . $key . "<li>";
-		  		echo "<ul>";
-		  		foreach ($value as $key => $value) {
-		  			echo "<li>" . $key . "</li>";
-		  		}
-		  		echo "</ul>";
-		     }
-		  echo "</ul>";
-		} 
+		$home_timeline = $twitteroauth->get('statuses/home_timeline.json');
+
+		 echo $home_timeline;
+		//   echo "<ul>";
+		//   foreach ($home_timeline as $key => $value) {
+		//   		echo "<li>" . $key . "<li>";
+		//   		echo "<ul>";
+		//   		foreach ($value as $key => $value) {
+		//   			echo "<li>" . $key . "</li>";
+		//   		}
+		//   		echo "</ul>";
+		//      }
+		//   echo "</ul>";
+		// } 
 
 ?>
 
