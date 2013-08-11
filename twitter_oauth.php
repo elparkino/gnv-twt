@@ -57,7 +57,8 @@ if (!empty($_GET['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !empt
 		  echo "<ul>";
 		  foreach ($search_tweets["statuses"] as $status) {
 
-		  		var_dump($status);
+		  		print_r($status);
+		  		// var_dump($status);
 		  		// echo "<li>" . $status . "</li>";
 		  		// echo "<li><ul>";
 		  		// foreach ($value as $key => $value) {
