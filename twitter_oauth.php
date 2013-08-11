@@ -55,10 +55,10 @@ if (!empty($_GET['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !empt
 
 		$search_tweets = $twitteroauth->get('search/tweets', array('q' => '%23thisisgainesville'));
 		  echo "<ul>";
-		  foreach ($search_tweets as $key => $value) {
-		  	
-		  		echo "<li>" . $key . "</li>";
-		  		echo "<li><ul>";
+		  foreach ($search_tweets["statuses"] as $status) {
+
+		  		echo "<li>" . $status . "</li>";
+		  		// echo "<li><ul>";
 		  		// foreach ($value as $key => $value) {
 		  		// 	echo "<li>" . $key . "</li>";
 		  		// }
