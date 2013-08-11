@@ -45,8 +45,10 @@ if (!empty($_GET['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !empt
     	if(!empty($_SESSION['username'])){  
     	// User is logged in, redirect  
 
-		$home_timeline = $twitteroauth->get('statuses/home_timeline');  
-		print_r($home_timeline);   
+		$home_timeline = $twitteroauth->get('statuses/home_timeline');
+		  foreach ($home_timeline as $key => $value) {
+		     	echo $key;
+		     }   
 		} 
 	}  
 
