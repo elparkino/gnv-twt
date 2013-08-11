@@ -73,9 +73,4 @@ if (!empty($_GET['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !empt
 
 	}  
 
-<?php  
-
-}else{
-   // header('Location: connect.php'); 
-}
-?>
+<?php  } ?>
