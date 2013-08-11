@@ -55,9 +55,19 @@ if (!empty($_GET['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !empt
 
 		$search_tweets = $twitteroauth->get('search/tweets', array('q' => '%23thisisgainesville'));
 		  // echo "<ul>";
+		
+
 		  foreach ($search_tweets->statuses as $status) {
 
 		  		echo '<pre>' . print_r($status) . '</pre>';
+
+		  		$tweet_id = $status->id;
+
+				$tweet_text = $status->text;
+				echo '<h1>' . $tweet_id . '</h1>';
+				echo '<ul>';
+				echo '<li>' . $tweet_text . '</li>';
+				echo '</ul>';
 		  		// echo '<li>' . $text . '</li>';
 		  		// var_dump($status);
 		  		// echo "<li>" . $status . "</li>";
